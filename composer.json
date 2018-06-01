@@ -1,0 +1,20 @@
+{
+  "name": "yaohaitao/php-project-architecture",
+  "description": "Start a new php project with this architecture.",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "YaoHaitao",
+      "email": "im.youkaitou@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "require": {
+    "monolog/monolog": "1.23.0"
+  }
+}

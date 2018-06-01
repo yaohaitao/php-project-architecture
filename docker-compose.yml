@@ -1,0 +1,31 @@
+version: '2'
+services:
+  debug:
+    image: phpstorm/php-71-apache-xdebug
+    ports:
+     - "8081:80"
+    volumes:
+      - ./app:/var/www/html/app
+      - ./public:/var/www/html/public
+      - ./vendor:/var/www/html/vendor
+      - ./docker/sites-available:/etc/apache2/sites-available
+    environment:
+        #TODO
+        #change the line below with your IP address that is visible from Docker
+        XDEBUG_CONFIG: remote_host=192.168.12.58
+#  sftp:
+#    image: phpstorm/sftp-server
+#    ports:
+#      - "2022:22"
+#    volumes:
+#  #   Please uncomment for Windows
+#  #     - C:/temp:/home/jetbrains/upload
+#  #   Please uncomment for macOS/Linux
+#      - /tmp/php:/home/jetbrains/upload
+#    command: jetbrains:jetbrains:1001
+#  mysql:
+#      image: phpstorm/mysql
+#      ports:
+#        - "33056:3306"
+#      volumes:
+#        - ./data:/var/lib/mysql

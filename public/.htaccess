@@ -1,0 +1,16 @@
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+
+<IfModule mod_rewrite.c>
+
+    Options +FollowSymLinks
+
+    RewriteEngine On
+
+    # RewriteRule (.*) public/$1    [L]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
