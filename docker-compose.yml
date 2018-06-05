@@ -6,7 +6,6 @@ services:
      - "8081:80"
     volumes:
       - ./:/var/www/html
-      - ./virtualhost.conf:/etc/apache2/sites-available/000-default.conf
     environment:
         #TODO
         #change the line below with your IP address that is visible from Docker
