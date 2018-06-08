@@ -1,12 +1,28 @@
 version: '2'
 services:
-  debug:
-    image: yaohaitao/php-71-apache-xdebug-intl
+  www:
+    image: yaohaitao/php-project-architecture
     ports:
-     - "8081:80"
+     - "80:80"
+     - "443:443"
     volumes:
       - ./:/var/www/html
     environment:
         #TODO
         #change the line below with your IP address that is visible from Docker
-        XDEBUG_CONFIG: remote_host=XXX.XXX.XXX.XXX
+        XDEBUG_CONFIG: remote_host=XXX.XXX.XXX.XXX        XDEBUG_CONFIG: remote_host=192.168.12.58
+    networks:
+      - default
+  mysql:
+    image: mysql/mysql-server:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      - "MYSQL_USER=admin"
+      - "MYSQL_PASSWORD=admin"
+      - "MYSQL_ROOT_PASSWORD=root"
+      - "MYSQL_DATABASE=database"
+    networks:
+      - default

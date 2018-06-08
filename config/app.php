@@ -68,7 +68,7 @@ return [
      *   You should treat it as extremely sensitive data.
      */
     'Security' => [
-        'salt' => env('SECURITY_SALT', '$429+?.8mYJaQc#4Zz'),
+        'salt' => env('SECURITY_SALT', 'ri.mX3DE2qfgnnYwk3Tv4&{MMXgV.HHcpLBf.hBrCmp4dzXf'),
     ],
 
     /**
@@ -245,22 +245,22 @@ return [
     'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Sqlite',
+            'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'localhost',
+            'host' => 'mysql',
             /*
              * CakePHP will use the default DB port based on the driver selected
              * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => '',
-            'password' => '',
-            'database' => ROOT . DS . 'database.db',
+            'username' => 'admin',
+            'password' => 'admin',
+            'database' => 'database',
             /*
              * You do not need to set this flag to use full utf-8 encoding (internal default since CakePHP 3.6).
              */
-            //'encoding' => 'utf8mb4',
+            // 'encoding' => 'utf8mb4',
             'timezone' => 'Asia/Tokyo',
             'flags' => [],
             'cacheMetadata' => true,
@@ -293,13 +293,13 @@ return [
          */
         'test' => [
             'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Sqlite',
+            'driver' => 'Cake\Database\Driver\Mysql',
             'persistent' => false,
-            'host' => 'localhost',
+            'host' => 'mysql',
             //'port' => 'non_standard_port_number',
-            'username' => '',
-            'password' => '',
-            'database' => ROOT . DS . 'database.db',
+            'username' => 'admin',
+            'password' => 'admin',
+            'database' => 'database',
             //'encoding' => 'utf8mb4',
             'timezone' => 'Asia/Tokyo',
             'cacheMetadata' => true,
